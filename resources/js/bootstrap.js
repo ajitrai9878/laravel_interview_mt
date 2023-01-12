@@ -1,35 +1,43 @@
-import _ from 'lodash';
-window._ = _;
+window._ = require('lodash');
 
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
+try {
+    require('bootstrap');
+    window.$ = window.jQuery = require('jquery');
+    require('select2');
+    require("jquery-confirm");
+    window.Popper = require('popper.js').default;
+    window.toastr = require('toastr');
+    require('jquery-validation');
+    require('datatables');
+    require('datatables.net');
+    require('jquery-datetimepicker');
+    require('jquery-ui');
+    // custom work for api or url use
+    window.host = "https://athensmarketing.io/";
+    if (window.location.host === "localhost") {
+        host = 'http://localhost/freelance/projects/athens/';
+    } else if (window.location.host === "athensmarketing.io") {
+        host = 'https://athensmarketing.io/';
+        let isNS = (navigator.appName === "Netscape") ? 1 : 0;
+        if (navigator.appName === "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
 
-import axios from 'axios';
-window.axios = axios;
+        function mischandler() {
+            return false;
+        }
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        function mousehandler(e) {
+            let myevent = (isNS) ? e : event;
+            let eventbutton = (isNS) ? myevent.which : myevent.button;
+            if ((eventbutton === 2) || (eventbutton === 3) || (eventbutton === 12)) return false;
+        }
 
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+    }
+    window.HOST = host;
+} catch (e) {
+    console.error(e);
+}
 
-// import Echo from 'laravel-echo';
 
-// import Pusher from 'pusher-js';
-// window.Pusher = Pusher;
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: import.meta.env.VITE_PUSHER_APP_KEY,
-//     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'mt1',
-//     wsHost: import.meta.env.VITE_PUSHER_HOST ? import.meta.env.VITE_PUSHER_HOST : `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
-//     wsPort: import.meta.env.VITE_PUSHER_PORT ?? 80,
-//     wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
-//     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
-//     enabledTransports: ['ws', 'wss'],
-// });

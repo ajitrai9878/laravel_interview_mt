@@ -1,0 +1,17 @@
+<?php return array (
+    'APP_NAME' => 'MyPTE',
+    'MAIL_MAILER' => 'smtp',
+    'MAIL_HOST' => 'smtp.gmail.com',
+    'MAIL_PORT' => '587',
+    'MAIL_USERNAME' => 'laraveldeveloper9878@gmail.com',
+    'MAIL_PASSWORD' => '',
+    'MAIL_ENCRYPTION' => 'tls',
+    'MAIL_FROM_ADDRESS' => 'noreply@gingerbread.com',
+    'MAIL_FROM_NAME' => 'MyPTE',
+    'DB_CONNECTION' => 'mysql',
+    'DB_HOST' => 'localhost',
+    'DB_PORT' => '3306',
+    'DB_DATABASE' => 'mypte',
+    'DB_USERNAME' => 'root',
+    'DB_PASSWORD' => '',
+);

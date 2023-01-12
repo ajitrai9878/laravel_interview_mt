@@ -1,0 +1,17 @@
+<?php return array(
+    'APP_NAME' => 'Athens-Marketing',
+    'MAIL_MAILER' => 'smtp',
+    'MAIL_HOST' => 'smtp.gmail.com',
+    'MAIL_PORT' => '587',
+    'MAIL_USERNAME' => 'laraveldeveloper9878@gmail.com',
+    'MAIL_PASSWORD' => 'pjvbrhtxsdozsejs',
+    'MAIL_ENCRYPTION' => 'tls',
+    'MAIL_FROM_ADDRESS' => 'noreply@athens.com',
+    'MAIL_FROM_NAME' => 'noreply@athens.com',
+    'DB_CONNECTION' => 'mysql',
+    'DB_HOST' => 'localhost',
+    'DB_PORT' => '3306',
+    'DB_DATABASE' => 'athens',
+    'DB_USERNAME' => 'root',
+    'DB_PASSWORD' => '',
+);
