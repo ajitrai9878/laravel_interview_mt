@@ -8,16 +8,29 @@ try {
     window.Popper = require('popper.js').default;
     window.toastr = require('toastr');
     require('jquery-validation');
-    require('datatables');
-    require('datatables.net');
-    require('jquery-datetimepicker');
     require('jquery-ui');
     // custom work for api or url use
-    window.host = "https://athensmarketing.io/";
+    window.host = "http://localhost/interview/projects/laravel_interview_mt/";
     if (window.location.host === "localhost") {
-        host = 'http://localhost/freelance/projects/athens/';
-    } else if (window.location.host === "athensmarketing.io") {
-        host = 'https://athensmarketing.io/';
+        host = 'http://localhost/interview/projects/laravel_interview_mt/';
+        /* let isNS = (navigator.appName === "Netscape") ? 1 : 0;
+         if (navigator.appName === "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
+
+         function mischandler() {
+             return false;
+         }
+
+         function mousehandler(e) {
+             let myevent = (isNS) ? e : event;
+             let eventbutton = (isNS) ? myevent.which : myevent.button;
+             if ((eventbutton === 2) || (eventbutton === 3) || (eventbutton === 12)) return false;
+         }
+
+         document.oncontextmenu = mischandler;
+         document.onmousedown = mousehandler;
+         document.onmouseup = mousehandler; */
+    } else if (window.location.host === "anydomain.com") {
+        host = 'https://anydomain.com/';
         let isNS = (navigator.appName === "Netscape") ? 1 : 0;
         if (navigator.appName === "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
 

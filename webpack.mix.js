@@ -32,19 +32,3 @@ mix.js([
         'public/assets/admin/js/ajax-validation.js',
     ], "public/admin/js/admin.js"
 );
-
-// frontend css require
-mix.styles([
-    'public/assets/admin/css/style.css',
-    'node_modules/toastr/build/toastr.min.css',
-    'public/assets/common/common.css',
-], 'public/frontend/css/frontend.css');
-
-// frontend js require
-
-mix.js([
-        'public/assets/common/common.js',
-        'node_modules/toastr/build/toastr.min.js',
-        'public/assets/admin/js/ajax-validation.js',
-    ], "public/frontend/js/frontend.js"
-);

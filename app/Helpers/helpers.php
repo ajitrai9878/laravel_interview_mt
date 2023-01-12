@@ -19,6 +19,7 @@ if (!function_exists('getUserName')) {
     }
 
 }
+
 if (!function_exists('getUserDetails')) {
 
     function getUserDetails($id)
@@ -30,6 +31,7 @@ if (!function_exists('getUserDetails')) {
     }
 
 }
+
 if (!function_exists('getUser')) {
 
     function getUser($id)
@@ -38,6 +40,7 @@ if (!function_exists('getUser')) {
     }
 
 }
+
 if (!function_exists('login_user')) {
 
     function login_user()
@@ -45,6 +48,7 @@ if (!function_exists('login_user')) {
         return Auth::user();
     }
 }
+
 if (!function_exists('login_user_id')) {
 
     function login_user_id()
@@ -52,6 +56,7 @@ if (!function_exists('login_user_id')) {
         return Auth::id();
     }
 }
+
 if (!function_exists('generateInitials')) {
     function generateInitials($name)
     {
@@ -59,12 +64,7 @@ if (!function_exists('generateInitials')) {
         return strtoupper($words[0][0]);
     }
 }
-if (!function_exists('oddEvenCheck')) {
-    function oddEvenCheck($number)
-    {
-        return $number % 2 === 0;
-    }
-}
+
 if (!function_exists('dateFormatCustom')) {
     function dateFormatCustom($date)
     {

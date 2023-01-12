@@ -16,8 +16,8 @@ class AdminSeeder extends Seeder
     public function run()
     {
         return User::create([
-            'name' => 'athens',
-            'email' => 'admin@athens.com',
+            'name' => 'Laravel Interview MT',
+            'email' => 'admin@anydomain.com',
             'phone_number' => '9878191645',
             'password' => Hash::make('rootadmin'),
         ]);

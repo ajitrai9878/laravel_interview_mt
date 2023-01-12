@@ -16,8 +16,8 @@ class HttpsProtocol
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($_SERVER['SERVER_NAME'] === 'www.athensmarketing.io') {
-            header('location:http://athensmarketing.io/');
+        if ($_SERVER['SERVER_NAME'] === 'www.anydomian.com') {
+            header('location:https://anydomian.com/');
         }
         if (!$request->secure() && !app()->environment('local')) {
             return redirect()->secure($request->getRequestUri());
