@@ -27,7 +27,7 @@ class Category extends Model
     public function saveCategory($request)
     {
         if ($request->id) {
-            return self::where(['id' => $request->id])->update(['name' => $request->name]);
+            return self::where(['id' => $request->id])->update(['name' => $request->name, 'parent_id' => $request->parent_id,]);
         }
         return self::create(['parent_id' => $request->parent_id, 'name' => $request->name]);
     }

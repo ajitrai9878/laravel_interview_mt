@@ -108,12 +108,12 @@
                             @foreach($categories as $category)
                                 <li>
                                     {{ $category->name }}
-                                    <a href="javascript:void(0)" class="btn btn-primary editCat"
+                                    <a href="javascript:void(0)" class="text-blue editCat"
                                        data-id="{{@$category->id}}"
                                        data-name="{{@$category->name}}" data-cat="{{@$category->parent_id}}">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
-                                    <a href="javascript:void(0)" class="btn btn-danger permanent_delete"
+                                    <a href="javascript:void(0)" class="text-danger permanent_delete"
                                        data-route="{{route('admin.category.destroy',@$category->id)}}">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>

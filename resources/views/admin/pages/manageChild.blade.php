@@ -1,13 +1,13 @@
 <ul>
-    @foreach($subCategory as $child)
+    @foreach($subCategory as $index=>$child)
         <li>
             {{ @$child->name }}
-            <a href="javascript:void(0)" class="btn btn-primary editCat"
+            <a href="javascript:void(0)" class="text-blue editCat"
                data-id="{{@$child->id}}"
                data-name="{{@$child->name}}" data-cat="{{@$child->parent_id}}">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
-            <a href="javascript:void(0)" class="btn btn-danger permanent_delete"
+            <a href="javascript:void(0)" class="text-danger permanent_delete"
                data-route="{{route('admin.category.destroy',@$child->id )}}">
                 <i class="fa fa-trash" aria-hidden="true"></i></a>
             @if(count(@$child->subCategory))
