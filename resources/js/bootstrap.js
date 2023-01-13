@@ -10,9 +10,9 @@ try {
     require('jquery-validation');
     require('jquery-ui');
     // custom work for api or url use
-    window.host = "http://localhost/interview/projects/laravel_interview_mt/";
+    window.host = "http://localhost/interview/laravel_interview_mt/";
     if (window.location.host === "localhost") {
-        host = 'http://localhost/interview/projects/laravel_interview_mt/';
+        host = 'http://localhost/interview/laravel_interview_mt/';
         /* let isNS = (navigator.appName === "Netscape") ? 1 : 0;
          if (navigator.appName === "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
 

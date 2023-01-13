@@ -6,11 +6,6 @@
             <i class="fad fa-times-circle"></i>
         </button>
     </div>
-    <a href="{{route('admin.index')}}"
-       class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-chart-pie text-xs mr-2"></i>
-        Categories
-    </a>
     <a href="{{route('log-out')}}"
        class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-sign-out text-xs mr-2" aria-hidden="true"></i>

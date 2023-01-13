@@ -5,5 +5,4 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/admin.css')}}">
     <title>@yield('title')</title>
-    @yield('css')
 </head>
