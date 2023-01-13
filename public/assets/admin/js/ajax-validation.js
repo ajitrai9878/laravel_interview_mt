@@ -5,16 +5,12 @@ $(document).ready(function () {
         // validate all hidden select elements
     });
     // category add
-    $("#loginAdminForm").submit(function (e) {
+    $("#categoryAddEdit").submit(function (e) {
         e.preventDefault();
     }).validate({
         rules: {
-            email: {
+            name: {
                 required: true
-            },
-            password: {
-                required: true,
-                minlength: 8,
             }
         },
         submitHandler: function (form) {
@@ -26,7 +22,10 @@ $(document).ready(function () {
                     data: $(form).serialize(),
                     success: function (response) {
                         if (response.status === true) {
-                            window.location.href = response.redirect;
+                            toastr.success(response.message);
+                            setTimeout(function () {
+                                window.location.href = response.redirect;
+                            }, 2000);
                         } else {
                             toastr.error(response.message);
                             CLICK = 0;

@@ -20,8 +20,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role',
         'email',
-        'phone_number',
         'password'
     ];
 
@@ -44,40 +44,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function storeData($request)
-    {
-        $data = $request->all();
-        unset($data['_token']);
-        if ($request->id) {
-            return self::where(['id' => $request->id])
-                ->update($data);
-        }
-        $data['password'] = Hash::make($request->password);
-        return self::create($data);
-    }
-
-    public function changeStatus($id, $request)
-    {
-        if ($request->status === '0') {
-            return self::where(['id' => $id])
-                ->update(['status' => '1']);
-        }
-        if ($request->status === '1') {
-            return self::where(['id' => $id])
-                ->update(['status' => '0']);
-        }
-        return false;
-    }
-
-    public function changePassword($request)
-    {
-        return self::where(['id' => $request->id])
-            ->update(['password' => Hash::make($request->password)]);
-    }
-
-    public function deleteDataPermanent($id)
-    {
-        return self::where(['id' => $id])->delete();
-    }
 }
 

@@ -19,6 +19,7 @@ class AdminController extends Controller
     public function index()
     {
         $categories = Category::with('subCategory')->whereNull('parent_id')->get();
-        return view('admin.pages.dashboard', compact('categories'));
+        $all_categories = Category::all();
+        return view('admin.pages.dashboard', compact('categories', 'all_categories'));
     }
 }

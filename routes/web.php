@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => ['prevent-back-history']], static function () {
+
     Auth::routes();
     Route::get('/', [CommonController::class, 'index'])->name('index');
     Route::get('/home', [CommonController::class, 'dashboard'])->name('home');

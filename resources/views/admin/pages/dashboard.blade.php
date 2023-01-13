@@ -108,13 +108,21 @@
                             @foreach($categories as $category)
                                 <li>
                                     {{ $category->name }}
-                                    @if(count($category->subCategory))
-                                        @include('admin.pages.manageChild',['subCategory' => $category->subCategory])
+                                    <a href="javascript:void(0)" class="btn btn-primary editCat"
+                                       data-id="{{@$category->id}}"
+                                       data-name="{{@$category->name}}" data-cat="{{@$category->parent_id}}">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-danger permanent_delete"
+                                       data-route="{{route('admin.category.destroy',@$category->id)}}">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                    @if(count(@$category->subCategory))
+                                        @include('admin.pages.manageChild',['subCategory' => @$category->subCategory])
                                     @endif
                                 </li>
                             @endforeach
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -125,11 +133,27 @@
                     </div>
                     <div class="card-body">
                         <form id="categoryAddEdit" name="categoryAddEdit" action="{{route('admin.category.store')}}">
-                            <input type="hidden" name="parentId" id="parentId" value="">
+                            @csrf
+                            <input type="hidden" name="id" value="" id="catId">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" placeholder="Name" name="name" id="name"
                                        value="">
+                            </div>
+                            <label id="name-error" class="error" for="name" style="display: none;"></label>
+                            <br>
+                            <div class="form-group">
+                                <label for="parent_id">Category</label>
+                                <select class="form-control" id="parent_id" name="parent_id">
+                                    <option value="">Select Category</option>
+                                    @foreach(@$all_categories as $cat)
+                                        <option value="{{@$cat->id}}">{{@$cat->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -196,5 +220,15 @@
         });
         /* Initialization of treeviews */
         $('#tree1').treed();
+    </script>
+    <script>
+        $(document).on("click", ".editCat", function () {
+            let id = $(this).attr('data-id');
+            let name = $(this).attr('data-name');
+            let cat = $(this).attr('data-cat');
+            $("#catId").val(id);
+            $("#name").val(name);
+            $("#parent_id").val(cat);
+        });
     </script>
 @endsection

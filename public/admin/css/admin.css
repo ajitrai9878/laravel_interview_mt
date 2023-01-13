@@ -101256,8 +101256,6 @@ div.code-toolbar > .toolbar span:focus {
 label.error {
     color: #C00000 !important;
     font-weight: 700;
-    padding: 25px;
-    margin-top: -35px;
 }
 .userRedirect {
     cursor: pointer;
