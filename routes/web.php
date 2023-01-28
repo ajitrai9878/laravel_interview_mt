@@ -26,6 +26,8 @@ Route::group(['middleware' => ['prevent-back-history']], static function () {
     Route::get('/home', [CommonController::class, 'dashboard'])->name('home');
     //logout
     Route::get('log-out', [CommonController::class, 'logout'])->name('log-out');
+    Route::get('pdf', [CommonController::class, 'pdf'])->name('pdf');
+    Route::get('pdf2', [CommonController::class, 'pdf2'])->name('pdf2');
 
 
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

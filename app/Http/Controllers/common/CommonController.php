@@ -8,6 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class CommonController extends Controller
 {
@@ -47,5 +49,25 @@ class CommonController extends Controller
             Auth::logout();
         }
         return redirect()->route('login');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function pdf()
+    {
+        return view('test');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function pdf2()
+    {
+        return view('test2');
     }
 }

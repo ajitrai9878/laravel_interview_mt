@@ -33,6 +33,7 @@
         "jquery-confirm": "^3.3.4",
         "jquery-ui": "^1.13.2",
         "jquery-validation": "^1.19.5",
+        "pdf2html": "^3.1.0",
         "popper.js": "^1.16.1",
         "select2": "^4.1.0-rc.0",
         "toastr": "^2.1.4",
