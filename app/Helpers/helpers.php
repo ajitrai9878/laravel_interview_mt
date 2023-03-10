@@ -71,3 +71,27 @@ if (!function_exists('dateFormatCustom')) {
         return date('F d, Y', strtotime($date));
     }
 }
+
+if (!function_exists('getPluckRandomTextFromPlandromString')) {
+    function getPluckRandomTextFromPlandromString($string)
+    {
+        $txt = "madAJITam";
+        $txtLength = strlen($txt) -1;
+        $backLength = strlen($txt) - 1;
+        $extraTxt = '';
+        for($a = 0;$a<=$txtLength;$a++){
+            $backLength = strlen($txt) - 1;
+            $backLength = $backLength-$a;  
+            if($txt[$a] !== $txt[$backLength]){
+              $numbers = range($a, $backLength);
+              foreach ($numbers as $key=>$number) {
+                  if($key !== 0){
+                      $extraTxt = $extraTxt.$txt[$number];
+                  }
+              }
+              retuen $extraTxt;
+            return true;        
+            }
+        }
+    }
+}
